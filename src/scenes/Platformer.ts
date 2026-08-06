@@ -183,6 +183,13 @@ export default class Platformer extends Phaser.Scene {
   private jumpKey!: Phaser.Input.Keyboard.Key;
   private runKey!: Phaser.Input.Keyboard.Key;
   private debugText!: Phaser.GameObjects.Text;
+  private latestInput: MarioInput = {
+    left: false,
+    right: false,
+    run: false,
+    jumpDown: false,
+    jumpPressed: false,
+  };
 
   create(): void {
     this.editorCreate();
@@ -215,6 +222,8 @@ export default class Platformer extends Phaser.Scene {
 
     this.setupInput();
     this.movementController = new MarioMovementController(this.player);
+    this.physics.world.on("worldstep", this.updateMovement, this);
+    this.events.once("shutdown", this.removePhysicsStepListener, this);
     this.debugText = this.add
       .text(16, 16, "", {
         backgroundColor: "#111827",
@@ -227,15 +236,28 @@ export default class Platformer extends Phaser.Scene {
       .setDepth(100);
   }
 
-  update(_time: number, deltaMs: number): void {
+  update(): void {
     const input = this.readInput();
-    this.movementController.update(deltaMs, input);
+    this.latestInput = {
+      ...input,
+      // Keep the edge until the next fixed physics step consumes it.
+      jumpPressed: this.latestInput.jumpPressed || input.jumpPressed,
+    };
 
     if (this.player.y > this.getGroundBottom() + Platformer.PLAYER_HEIGHT) {
       this.respawnPlayer();
     }
 
     this.updateDebugText();
+  }
+
+  private updateMovement(deltaSeconds: number): void {
+    this.movementController.update(deltaSeconds * 1000, this.latestInput);
+    this.latestInput.jumpPressed = false;
+  }
+
+  private removePhysicsStepListener(): void {
+    this.physics.world.off("worldstep", this.updateMovement, this);
   }
 
   private getGroundLayer(): Phaser.Tilemaps.TilemapLayer {
