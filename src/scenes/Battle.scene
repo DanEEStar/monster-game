@@ -1,0 +1,86 @@
+{
+    "id": "e280c6a2-c14e-4195-9fa5-6277ef2355d4",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Battle",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "a2d61b73-cd66-4360-b915-a434d42c796f",
+            "label": "background",
+            "x": 640,
+            "y": 360,
+            "isFilled": true,
+            "fillColor": "#3b0764",
+            "width": 1280,
+            "height": 720
+        },
+        {
+            "type": "Text",
+            "id": "f5dcf59d-6884-431c-b8ae-46b6585aad9d",
+            "label": "title",
+            "x": 640,
+            "y": 300,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Battle Scene",
+            "fontFamily": "Arial",
+            "fontSize": "52px",
+            "fontStyle": "bold",
+            "color": "#ffffff"
+        },
+        {
+            "type": "Text",
+            "id": "a6382e15-7d30-405a-b37c-5ba3642dfaef",
+            "label": "status",
+            "x": 640,
+            "y": 370,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Ready for development",
+            "fontFamily": "Arial",
+            "fontSize": "24px",
+            "color": "#e9d5ff"
+        },
+        {
+            "type": "Rectangle",
+            "id": "e5018a6b-eccf-4f2e-be44-36fd8584d563",
+            "label": "backButton",
+            "scope": "CLASS",
+            "x": 640,
+            "y": 620,
+            "isFilled": true,
+            "fillColor": "#334155",
+            "width": 250,
+            "height": 56
+        },
+        {
+            "type": "Text",
+            "id": "d14673fd-d34e-4ff0-840e-3cb24417f3f0",
+            "label": "backLabel",
+            "x": 640,
+            "y": 620,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Back to Menu",
+            "fontFamily": "Arial",
+            "fontSize": "22px",
+            "color": "#ffffff"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
