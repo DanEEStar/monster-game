@@ -1,26 +1,38 @@
 {
-  "section1": {
-    "files": [
-      {
-        "url": "assets/FufuSuperDino.png",
-        "type": "image",
-        "key": "FufuSuperDino"
-      },
-      {
-        "type": "spritesheet",
-        "key": "Grassy_Fields_Tileset",
-        "url": "assets/Grassy_Fields_Tileset.png",
-        "frameConfig": {
-          "frameWidth": 16,
-          "frameHeight": 16
-        }
-      }
-    ]
-  },
-  "meta": {
-    "app": "Phaser Editor 2D - Asset Pack Editor",
-    "contentType": "phasereditor2d.pack.core.AssetContentType",
-    "url": "https://phasereditor2d.com",
-    "version": 2
-  }
+    "section1": {
+        "files": [
+            {
+                "url": "assets/elefant.jpg",
+                "type": "image",
+                "key": "elefant"
+            },
+            {
+                "url": "assets/FufuSuperDino.png",
+                "type": "image",
+                "key": "FufuSuperDino"
+            },
+            {
+                "url": "assets/gorilla.jpg",
+                "type": "image",
+                "key": "gorilla"
+            },
+            {
+                "type": "spritesheet",
+                "key": "Grassy_Fields_Tileset",
+                "url": "assets/Grassy_Fields_Tileset.png",
+                "frameConfig": {
+                    "frameWidth": 16,
+                    "frameHeight": 16
+                }
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false,
+        "visible": true
+    }
 }
