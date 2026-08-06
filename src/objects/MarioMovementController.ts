@@ -42,18 +42,18 @@ export interface MarioMovementConfig {
 }
 
 export const DEFAULT_MARIO_MOVEMENT: MarioMovementConfig = {
-  walkSpeed: 90,
-  runSpeed: 150,
+  walkSpeed: 120,
+  runSpeed: 180,
   maxHorizontalSpeed: 240,
   groundAcceleration: 225,
   airAcceleration: 225,
   groundFriction: 225,
-  skidAcceleration: 450,
-  jumpVelocities: [-210, -217.5, -225, -240],
+  skidAcceleration: 600,
+  jumpVelocities: [-240, -245, -260, -265],
   heldJumpGravity: 225,
-  normalGravity: 1125,
+  normalGravity: 1200,
   heldGravityVelocityThreshold: -120,
-  maxFallSpeed: 240,
+  maxFallSpeed: 400,
   coyoteTime: 0.06,
   jumpBufferTime: 0.08,
 };
