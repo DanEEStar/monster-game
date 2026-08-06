@@ -2,6 +2,7 @@
     "id": "e280c6a2-c14e-4195-9fa5-6277ef2355d4",
     "sceneType": "SCENE",
     "settings": {
+        "snapEnabled": true,
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
@@ -12,19 +13,6 @@
         "borderHeight": 720
     },
     "displayList": [
-        {
-            "type": "Text",
-            "id": "a6382e15-7d30-405a-b37c-5ba3642dfaef",
-            "label": "rival_name",
-            "x": 497,
-            "y": 95,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Elefant",
-            "fontFamily": "Arial",
-            "fontSize": "24px",
-            "color": "#e9d5ff"
-        },
         {
             "type": "Rectangle",
             "id": "e5018a6b-eccf-4f2e-be44-36fd8584d563",
@@ -69,73 +57,153 @@
             "texture": {
                 "key": "gorilla"
             },
-            "x": 555,
-            "y": 362,
-            "scaleX": 0.5395141376172515,
+            "x": 352,
+            "y": 416,
+            "scaleX": 0.4426316811464664,
             "scaleY": 0.42157410449095606
         },
         {
-            "type": "Rectangle",
-            "id": "065eecad-28d4-4b43-95d3-cf9abdff6065",
-            "label": "rival_hp_total",
-            "x": 651,
-            "y": 133,
-            "scaleX": 3.0231262345729277,
-            "scaleY": 0.21683839264859162,
-            "isFilled": true,
-            "width": 128,
-            "height": 128
+            "type": "Container",
+            "id": "09549792-a1d2-4426-9641-2e3b18a6fb45",
+            "label": "hp_player",
+            "x": 720,
+            "y": 448,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "52d894d0-d7d2-4b13-bc59-7327b269cde1",
+                    "label": "player_hp_full",
+                    "x": 192,
+                    "y": 48,
+                    "scaleX": 3,
+                    "scaleY": 0.2,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "e3dc5263-7fc9-44c8-9e5c-264f9ab20a56",
+                    "label": "player_hp_current",
+                    "x": 96,
+                    "y": 48,
+                    "scaleX": 1.5,
+                    "scaleY": 0.2,
+                    "isFilled": true,
+                    "fillColor": "#5c7bce",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Text",
+                    "id": "cc8b30a8-2c76-4776-9a69-98be7449c92d",
+                    "label": "player_name",
+                    "x": 32,
+                    "y": 16,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Gorilla",
+                    "fontFamily": "Arial",
+                    "fontSize": "24px",
+                    "color": "#e9d5ff"
+                }
+            ]
         },
         {
-            "type": "Rectangle",
-            "id": "6f32599d-deb6-46bc-b82c-7c255d011214",
-            "label": "rival_hp_level",
-            "x": 559,
-            "y": 133,
-            "scaleX": 1.5963051320779478,
-            "scaleY": 0.21071865694711023,
-            "isFilled": true,
-            "fillColor": "#5c7bce",
-            "width": 128,
-            "height": 128
+            "type": "Container",
+            "id": "126181ea-5978-41b0-98d5-5bcef587fc7e",
+            "label": "hp_rival",
+            "x": 272,
+            "y": 80,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "9511e957-a409-4c13-9904-f1ebf272c02c",
+                    "label": "rival_hp_full",
+                    "x": 192,
+                    "y": 48,
+                    "scaleX": 3,
+                    "scaleY": 0.2,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "bffbf54e-6a0f-4bf0-b137-d207d1ae59c3",
+                    "label": "rival_hp_current",
+                    "x": 96,
+                    "y": 48,
+                    "scaleX": 1.5,
+                    "scaleY": 0.2,
+                    "isFilled": true,
+                    "fillColor": "#5c7bce",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Text",
+                    "id": "5cab2ebc-856d-4c19-9e50-3aba6e935ca4",
+                    "label": "rival_name",
+                    "x": 32,
+                    "y": 16,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Elefant",
+                    "fontFamily": "Arial",
+                    "fontSize": "24px",
+                    "color": "#e9d5ff"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "49d5429f-c6c3-4b48-a277-aa254bab0b96",
+            "label": "dialog",
+            "y": 432,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "a18f19e9-3bd1-41cd-a4e0-545f05aee0a7",
+                    "label": "dialog_background",
+                    "x": 640,
+                    "y": 224,
+                    "scaleX": 10,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                }
+            ]
         },
         {
             "type": "Text",
-            "id": "e127c0cb-b5a3-429b-b986-ce68e9a78f38",
-            "label": "player_name",
-            "x": 779,
-            "y": 427,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Gorilla",
-            "fontFamily": "Arial",
-            "fontSize": "24px",
-            "color": "#e9d5ff"
+            "id": "9c2a6aeb-ac72-4f55-86bb-055a2c403360",
+            "label": "dialog_option_1",
+            "x": 208,
+            "y": 624,
+            "text": "Option 1",
+            "color": "#000000ff",
+            "stroke": "#000000ff",
+            "strokeThickness": 2,
+            "shadow.stroke": true
         },
         {
-            "type": "Rectangle",
-            "id": "d3e8417a-fca0-4ddd-8faf-f82091714db7",
-            "label": "player_hp_total",
-            "x": 933,
-            "y": 465,
-            "scaleX": 3.0231262345729277,
-            "scaleY": 0.21683839264859162,
-            "isFilled": true,
-            "width": 128,
-            "height": 128
+            "type": "Text",
+            "id": "ba742edc-4a9e-4a50-b389-dd03017450de",
+            "label": "dialog_option_2",
+            "x": 208,
+            "y": 672,
+            "text": "Option 2\n",
+            "color": "#000000ff"
         },
         {
-            "type": "Rectangle",
-            "id": "9ad5ba1f-2265-4f6c-8520-d19af15da90f",
-            "label": "player_hp_level",
-            "x": 841,
-            "y": 465,
-            "scaleX": 1.5963051320779478,
-            "scaleY": 0.21071865694711023,
-            "isFilled": true,
-            "fillColor": "#5c7bce",
-            "width": 128,
-            "height": 128
+            "type": "Text",
+            "id": "88daa3e7-5768-4a24-b7de-39125dc7312b",
+            "label": "dialog_option_3",
+            "x": 400,
+            "y": 624,
+            "text": "Option 3\n",
+            "color": "#000000ff"
         }
     ],
     "plainObjects": [],
