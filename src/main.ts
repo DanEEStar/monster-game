@@ -26,6 +26,14 @@ window.addEventListener("load", function () {
     height: 720,
     backgroundColor: "#2f2f2f",
     parent: "game-container",
+    physics: {
+      default: "arcade",
+      arcade: {
+        gravity: { x: 0, y: 0 },
+        fixedStep: true,
+        fps: 60,
+      },
+    },
     scale: {
       mode: Phaser.Scale.ScaleModes.FIT,
       autoCenter: Phaser.Scale.Center.CENTER_BOTH,

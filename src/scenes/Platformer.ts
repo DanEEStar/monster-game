@@ -3,7 +3,11 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+
 /* START-USER-IMPORTS */
+import MarioMovementController, {
+  type MarioInput,
+} from "../objects/MarioMovementController";
 /* END-USER-IMPORTS */
 
 export default class Platformer extends Phaser.Scene {
@@ -76,12 +80,57 @@ export default class Platformer extends Phaser.Scene {
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+              2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+              2, 2, 2, 2, 2,
+            ],
+          },
+          {
+            type: "tilelayer",
+            name: "cosmetic",
+            width: 40,
+            height: 22,
+            opacity: 1,
+            data: [
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-              0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-              2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
               0, 0, 0, 0, 0,
             ],
@@ -94,20 +143,20 @@ export default class Platformer extends Phaser.Scene {
     );
     platformerMap.addTilesetImage("Grassy_Fields_Tileset");
 
-    // background
-    const background = this.add.rectangle(640, 360, 1280, 720);
-    background.isFilled = true;
-    background.fillColor = 4136203;
-
     // ground
     const ground = platformerMap.createLayer(
       "ground",
       ["Grassy_Fields_Tileset"],
       0,
-      8,
+      0,
     )!;
     ground.scaleX = 2;
     ground.scaleY = 2;
+
+    // cosmetic
+    const cosmetic = platformerMap.createLayer("cosmetic", [], 0, 0)!;
+    cosmetic.scaleX = 2;
+    cosmetic.scaleY = 2;
 
     this.platformerMap = platformerMap;
 
@@ -118,14 +167,212 @@ export default class Platformer extends Phaser.Scene {
 
   /* START-USER-CODE */
 
-  create() {
+  private static readonly PLAYER_TEXTURE_KEY = "platformer-player-placeholder";
+  private static readonly PLAYER_WIDTH = 24;
+  private static readonly PLAYER_HEIGHT = 32;
+  private static readonly SPAWN_COLUMN = 5;
+
+  private groundLayer!: Phaser.Tilemaps.TilemapLayer;
+  private player!: Phaser.Physics.Arcade.Sprite;
+  private movementController!: MarioMovementController;
+  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+  private movementKeys!: {
+    left: Phaser.Input.Keyboard.Key;
+    right: Phaser.Input.Keyboard.Key;
+  };
+  private jumpKey!: Phaser.Input.Keyboard.Key;
+  private runKey!: Phaser.Input.Keyboard.Key;
+  private debugText!: Phaser.GameObjects.Text;
+  private latestInput: MarioInput = {
+    left: false,
+    right: false,
+    run: false,
+    jumpDown: false,
+    jumpPressed: false,
+  };
+
+  create(): void {
     this.editorCreate();
 
-    this.cameras.main.setBounds(
-      0,
-      0,
-      this.platformerMap.widthInPixels * 2,
-      this.platformerMap.heightInPixels * 2,
+    this.groundLayer = this.getGroundLayer();
+    // Phaser represents empty cells as -1 at runtime, while the scene data uses 0.
+    this.platformerMap.setCollisionByExclusion([-1, 0], true, true, this.groundLayer);
+
+    const worldWidth = this.platformerMap.widthInPixels * this.groundLayer.scaleX;
+    const worldHeight = this.platformerMap.heightInPixels * this.groundLayer.scaleY;
+
+    this.cameras.main.setBounds(0, 0, worldWidth, worldHeight);
+
+    this.createPlayerTexture();
+    const spawn = this.getSpawnPosition();
+
+    this.player = this.physics.add.sprite(
+      spawn.x,
+      spawn.y,
+      Platformer.PLAYER_TEXTURE_KEY,
+    );
+    this.player.setDisplaySize(Platformer.PLAYER_WIDTH, Platformer.PLAYER_HEIGHT);
+    this.player.setDepth(10);
+
+    const body = this.player.body as Phaser.Physics.Arcade.Body;
+    body.setSize(Platformer.PLAYER_WIDTH, Platformer.PLAYER_HEIGHT, true);
+    body.allowGravity = false;
+
+    this.physics.add.collider(this.player, this.groundLayer);
+
+    this.setupInput();
+    this.movementController = new MarioMovementController(this.player);
+    this.physics.world.on("worldstep", this.updateMovement, this);
+    this.events.once("shutdown", this.removePhysicsStepListener, this);
+    this.debugText = this.add
+      .text(16, 16, "", {
+        backgroundColor: "#111827",
+        color: "#ffffff",
+        fontFamily: "monospace",
+        fontSize: "16px",
+      })
+      .setPadding(8)
+      .setScrollFactor(0)
+      .setDepth(100);
+  }
+
+  update(): void {
+    const input = this.readInput();
+    this.latestInput = {
+      ...input,
+      // Keep the edge until the next fixed physics step consumes it.
+      jumpPressed: this.latestInput.jumpPressed || input.jumpPressed,
+    };
+
+    if (this.player.y > this.getGroundBottom() + Platformer.PLAYER_HEIGHT) {
+      this.respawnPlayer();
+    }
+
+    this.updateDebugText();
+  }
+
+  private updateMovement(deltaSeconds: number): void {
+    this.movementController.update(deltaSeconds * 1000, this.latestInput);
+    this.latestInput.jumpPressed = false;
+  }
+
+  private removePhysicsStepListener(): void {
+    this.physics.world.off("worldstep", this.updateMovement, this);
+  }
+
+  private getGroundLayer(): Phaser.Tilemaps.TilemapLayer {
+    const layer = this.platformerMap.getLayer("ground");
+
+    if (!layer) {
+      throw new Error("Platformer scene requires a ground tilemap layer.");
+    }
+
+    return layer.tilemapLayer;
+  }
+
+  private createPlayerTexture(): void {
+    if (this.textures.exists(Platformer.PLAYER_TEXTURE_KEY)) {
+      return;
+    }
+
+    const graphics = this.add.graphics();
+    graphics.fillStyle(0x4ade80, 1);
+    graphics.fillRoundedRect(
+      1,
+      1,
+      Platformer.PLAYER_WIDTH - 2,
+      Platformer.PLAYER_HEIGHT - 2,
+      5,
+    );
+    graphics.lineStyle(2, 0x14532d, 1);
+    graphics.strokeRoundedRect(
+      1,
+      1,
+      Platformer.PLAYER_WIDTH - 2,
+      Platformer.PLAYER_HEIGHT - 2,
+      5,
+    );
+    graphics.generateTexture(
+      Platformer.PLAYER_TEXTURE_KEY,
+      Platformer.PLAYER_WIDTH,
+      Platformer.PLAYER_HEIGHT,
+    );
+    graphics.destroy();
+  }
+
+  private getSpawnPosition(): Phaser.Math.Vector2 {
+    for (let tileY = this.platformerMap.height - 1; tileY >= 0; tileY -= 1) {
+      const tile = this.groundLayer.getTileAt(Platformer.SPAWN_COLUMN, tileY);
+
+      if (tile && tile.index > 0) {
+        return new Phaser.Math.Vector2(
+          tile.getCenterX(),
+          tile.getTop() - Platformer.PLAYER_HEIGHT / 2,
+        );
+      }
+    }
+
+    const tileWidth = this.platformerMap.tileWidth * this.groundLayer.scaleX;
+    const tileHeight = this.platformerMap.tileHeight * this.groundLayer.scaleY;
+
+    return new Phaser.Math.Vector2(
+      Platformer.SPAWN_COLUMN * tileWidth + tileWidth / 2,
+      this.getGroundBottom() - tileHeight - Platformer.PLAYER_HEIGHT / 2,
+    );
+  }
+
+  private getGroundBottom(): number {
+    return (
+      this.groundLayer.y + this.platformerMap.heightInPixels * this.groundLayer.scaleY
+    );
+  }
+
+  private setupInput(): void {
+    const keyboard = this.input.keyboard;
+
+    if (!keyboard) {
+      throw new Error("Platformer scene requires keyboard input.");
+    }
+
+    this.cursors = keyboard.createCursorKeys();
+    this.movementKeys = keyboard.addKeys({
+      left: Phaser.Input.Keyboard.KeyCodes.A,
+      right: Phaser.Input.Keyboard.KeyCodes.D,
+    }) as typeof this.movementKeys;
+    this.jumpKey = keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    this.runKey = keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SHIFT);
+  }
+
+  private readInput(): MarioInput {
+    return {
+      left: this.cursors.left.isDown || this.movementKeys.left.isDown,
+      right: this.cursors.right.isDown || this.movementKeys.right.isDown,
+      run: this.runKey.isDown,
+      jumpDown: this.jumpKey.isDown,
+      jumpPressed: Phaser.Input.Keyboard.JustDown(this.jumpKey),
+    };
+  }
+
+  private respawnPlayer(): void {
+    const spawn = this.getSpawnPosition();
+    const body = this.player.body as Phaser.Physics.Arcade.Body;
+
+    body.reset(spawn.x, spawn.y);
+    this.movementController.reset();
+  }
+
+  private updateDebugText(): void {
+    const state = this.movementController.getDebugState();
+
+    this.debugText.setText(
+      [
+        `vx: ${state.velocityX.toFixed(1)}`,
+        `vy: ${state.velocityY.toFixed(1)}`,
+        `grounded: ${state.grounded ? "yes" : "no"}`,
+        `target speed: ${state.targetVelocityX.toFixed(1)}`,
+        `acceleration: ${state.accelerationMode}`,
+        `state: ${state.movementState}`,
+      ].join("\n"),
     );
   }
 
